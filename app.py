@@ -30,3 +30,53 @@ Thank you for visiting our online store today.
                 
 Please leave a review on your way out.
 """)
+
+elif main_page_selection == "Order-Up":
+    sweets_container = st.container(border=True)
+    drinks_container = st.container(border=True)
+    food_container = st.container(border=True)
+
+    with sweets_container:
+        col1, col2 = st.columns([3, 7], gap="small")
+
+        with col1:
+            st.image("images/muffin2.png")
+
+        with col2:
+            st.markdown(""" 
+* ***Lemon Blueberry Muffins*** _$1.50_
+* ***Chocolate Chip Muffins*** _$2.50_
+* ***Strawberry Muffins*** _$3.25_
+* ***Banana Muffins*** _$1.50_
+* ***Strawberry Muffins*** _$5.50_
+""")
+            
+    with drinks_container:
+        col1, col2 = st.columns([7, 3], gap="small")
+
+        with col2:
+            st.image("images/coffee.png")
+
+        with col1:
+            st.markdown(""" 
+* ***Cappuccino***      _$3.50_
+* ***Latte***           _$3.50_
+* ***Frappuccino***     _$3.50_
+* ***Mocha***           _$3.50_
+* ***Irish Coffee***    _$3.50_
+""")
+
+    with food_container:
+        col1, col2 = st.columns([3, 7], gap="small")
+
+        with col1:
+            st.image("images/mittens.png")
+
+        with col2:
+            st.markdown(""" 
+* ***Ugali le Choma*** _$11.50_
+* ***Chips la Ketchup*** _$22.50_
+* ***Ome du Fromage*** _$31.25_
+* ***Kienyeji de Kuku*** _$15.50_
+* ***Chapati Tacos la Beans*** _$25.50_
+""")
