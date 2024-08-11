@@ -7,11 +7,6 @@ st.logo("images/logo.png")
 # Image
 st.image("images/big_logo.png", width=650)
 
-# The side bar
-with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'About Project', 'Contact'], 
-        icons=['house', 'gear', 'phone'], menu_icon="cast", default_index=1)
-
 # Main Page Menu
 main_page_selection = option_menu(
     None, ["Home", "Order-Up", "Review Us", 'Settings'], 
