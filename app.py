@@ -9,8 +9,8 @@ st.image("images/big_logo.png", width=650)
 
 # Main Page Menu
 main_page_selection = option_menu(
-    None, ["Home", "Order-Up", "Review Us", 'Settings'], 
-    icons=['house', 'cloud-upload', "list-task", 'gear'], 
+    None, ["Home", "Order-Up", "Review Us"], 
+    icons=['house', 'cloud-upload', "list-task"], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
 # Main - Home Page
