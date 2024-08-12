@@ -39,11 +39,11 @@ elif main_page_selection == "Order-Up":
 
         with col2:
             st.markdown(""" 
-* ***Lemon Blueberry Muffins*** _$1.50_
-* ***Chocolate Chip Muffins*** _$2.50_
-* ***Strawberry Muffins*** _$3.25_
-* ***Banana Muffins*** _$1.50_
-* ***Strawberry Muffins*** _$5.50_
+* ***Lemon Blueberry Muffins*** _A fabulously fab muffin only at **$1.50**_
+* ***Chocolate Chip Muffins*** _An exquisitly exquisit muffin only at **$2.50**_
+* ***Strawberry Muffins*** _A wonderful wonder of a muffin only at **$3.25**_
+* ***Banana Muffins*** _A beautiful beauty of a muffin only at **$1.50**_
+* ***Strawberry Muffins*** _A miraculous miracle of a muffin only at **$5.50**_
 """)
             
     with drinks_container:
@@ -54,11 +54,11 @@ elif main_page_selection == "Order-Up":
 
         with col1:
             st.markdown(""" 
-* ***Cappuccino***      _$3.50_
-* ***Latte***           _$3.50_
-* ***Frappuccino***     _$3.50_
-* ***Mocha***           _$3.50_
-* ***Irish Coffee***    _$3.50_
+* ***Cappuccino***   _Yumminess redifined so well in a futuristic cup **$8.50**_
+* ***Latte***        _Visionary redifined so well in a futuristic cup **$6.50**_
+* ***Frappuccino***  _Impossibility redifined so well in a futuristic cup **$5.50**_
+* ***Mocha***        _Creativity redifined so well in a futuristic cup **$2.50**_
+* ***Irish Coffee*** _Soberness redifined so well in a futuristic cup **$4.50**_
 """)
 
     with food_container:
@@ -69,9 +69,9 @@ elif main_page_selection == "Order-Up":
 
         with col2:
             st.markdown(""" 
-* ***Ugali le Choma*** _$11.50_
-* ***Chips la Ketchup*** _$22.50_
-* ***Ome du Fromage*** _$31.25_
-* ***Kienyeji de Kuku*** _$15.50_
-* ***Chapati Tacos la Beans*** _$25.50_
+* ***Ugali le Choma*** _Food so yummy, you could slap your mom **$11.50**_
+* ***Chips la Ketchup*** _Food so yummy, you should slap your dad **$22.50**_
+* ***Ome du Fromage*** _Food so yummy, you could slap youself **$31.25**_
+* ***Kienyeji de Kuku*** _Food so yummy, you shall slap your bro $15.50_
+* ***Chapati Tacos la Beans*** _Food so yummy, we slap you $25.50_
 """)
