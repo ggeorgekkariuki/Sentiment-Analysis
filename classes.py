@@ -10,7 +10,7 @@ nltk.download('wordnet')
 nltk.download('punkt')
 
 # Target Labels
-labels = ['negative', 'neutral', 'positive']
+labels = ['Negative', 'Neutral', 'Positive']
 
 # Initialize the lemmatizer
 lemmatizer = WordNetLemmatizer()

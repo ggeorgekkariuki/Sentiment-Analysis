@@ -1,5 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import time
+import numpy as np
+from classes import execute_flow
 
 # The logo
 st.logo("images/logo.png")
@@ -77,4 +80,37 @@ elif main_page_selection == "Order-Up":
 """)
 
 elif main_page_selection == "Review Us":
-    pass
+    # The Form Container
+    tweet_container = st.empty()
+
+    with tweet_container.container():
+
+        col1, col2 = st.columns([7,3])
+
+        with col1:
+            st.subheader("Review Us:bird:")
+            with st.form(key='form1'):
+                username = st.text_input("Username", placeholder="Enter your Username")
+                sentiment = st.text_area("Review", placeholder="Please enter your review here")
+                predict_button = st.form_submit_button('Post Review')
+
+
+        with col2:
+                st.subheader("The Back End Prediction :telescope:")
+                info_text = st.info("Enter text to predict sentiment")
+                if predict_button:
+                    info_text.empty()
+                    if username == "" and sentiment == "":
+                        st.error("Please fill in the previous form - Username and Review Fields")
+                    elif username == "":
+                        st.info("Please fill in the previous form - Username Field", icon="ℹ️")
+                    elif sentiment == "":
+                        st.info("Please fill in the previous form - Review Field", icon="ℹ️")
+                    else:
+                        st.write(f"The user @{username.lower().replace(' ', '_')} said '{sentiment}'")
+                        randoms = ['Thinking', 'Processing', 'Considering', 'Wizardy Applying', 'Hmmm', 'Contacting the Mothership', "Predicting",
+                        "Checking under the bed for an answer"]
+                        answers = randoms[np.random.choice(len(randoms))]
+                        with st.spinner(f"{answers}..."):
+                            time.sleep(3)
+                            st.success(f"Our model predicted the review to be a {execute_flow(sentiment)} Sentiment!")
