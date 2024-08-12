@@ -75,3 +75,6 @@ elif main_page_selection == "Order-Up":
 * ***Kienyeji de Kuku*** _Food so yummy, you shall slap your bro $15.50_
 * ***Chapati Tacos la Beans*** _Food so yummy, we slap you $25.50_
 """)
+
+elif main_page_selection == "Review Us":
+    pass
