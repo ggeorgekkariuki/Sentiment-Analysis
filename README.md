@@ -1,4 +1,7 @@
    # FOODY  AND FOODIE SENTIMENT ANALYSIS 
+   
+   ![Foody & Foodie Logo](logo.png)
+ 
     ---
  # OVERVIEW 
     ---
@@ -41,19 +44,81 @@ Examine the overall sentiment distribution across the reviews, breaking down the
 * Data Preprocessing: Removing capitalizations, stopwords, and applying lemmatization.
 
 
-# Project Structure
+# MODELLING 
+
+---
+ To classify the sentiment of reviews, multiple machine learning models were implemented and optimized using hyperparameter tuning. Each model brings its own strengths to the task, and their performance was assessed based on various evaluation metrics.
+ 
+ 
+# 1.Logistic Regression
+---
+ 
+ Logistic regression is a linear model commonly used for binary and multiclass classification problems. In this project, the following steps were taken:
+
+* Training: The logistic regression model was trained using the review data, with a focus on achieving convergence by setting the maximum number of iterations to 3000. This ensures that the model has ample opportunity to fit the data adequately.
+
+* Hyperparameter Tuning: Grid search was used to optimize the hyperparameters, including:
+
+* `C`: The inverse of regularization strength. Smaller values indicate stronger regularization.
+
+* `max_iter`: The maximum number of iterations for the solver to converge.
+
+* `solver`: The algorithm used for optimization, such as 'liblinear' or 'saga'.
+
+
+# 2.Random Forest Classifier
+---
+The random forest classifier is an ensemble learning method that builds multiple decision trees and merges their predictions to improve accuracy and control over-fitting. The following approach was used:
+
+* Implementation: A random forest model was implemented with initial hyperparameters set as:
+
+       * `n_estimators`: 100, representing the number of trees in the forest.
+
+       * `max_depth`: 10, the maximum depth of each tree to control the complexity and prevent over-fitting.
+
+       * `min_samples_split`: 10, the minimum number of samples required to split an internal node.
+
+       * `min_samples_leaf`: 5, the minimum number of samples required to be at a leaf node.
+  
+* `Hyperparameter Tuning`: Tuning involved adjusting the number of trees and the depth of each tree to find the optimal balance       between bias and variance.
+
+
+# 3.Linear Support Vector Machine (SVM)
 ---
 
- * Data Collection: Scripts to scrape and collect Yelp reviews.
+ SVM is a powerful classification method, particularly for high-dimensional data. The linear SVM was applied as follows:
+
+ * Dimensionality Reduction: To manage the high dimensionality of the text data, `TruncatedSVD was used`. This technique reduces the feature space while preserving as much information as possible, which is crucial for computational efficiency and model performance.
  
- *  Data Cleaning: Scripts to clean and preprocess the data for analysis.
+ * Training: The linear SVM model was trained on the reduced feature set to classify the text data efficiently.
  
- * Exploratory Data Analysis: Notebooks and scripts for initial data analysis and visualization.
+ * Hyperparameter Tuning: The tuning process involved:
  
- * Modeling: Implementation of various machine learning models to predict sentiment.
+   * Adjusting the number of components for TruncatedSVD to determine the optimal level of dimensionality reduction.
+   
+   * Fine-tuning the regularization parameter (C) of the SVM to balance the trade-off between achieving a low training error and a low testing error.
+   
+   * Exploring different ranges for n-grams to capture various levels of textual information.
+   
+   
+# 4. Multinomial Naive Bayes
+---
+Multinomial Naive Bayes is particularly well-suited for text classification tasks due to its probabilistic nature. The steps taken include:
+
+* Training: The Multinomial Naive Bayes model was trained to classify the text data based on the frequency of words or features.
+
+* Hyperparameter Tuning: The primary focus was on adjusting the alpha parameter, which is the smoothing parameter. Smoothing is used to handle cases where a particular feature does not appear in the training set, thus avoiding zero probabilities.
+
+
+# 5. Decision Tree Classifier
+Decision tree classifiers are intuitive and easy to interpret models that make decisions based on the features of the input data. Here's how it was implemented:
+
+ * Implementation: A decision tree classifier was implemented to create a model that splits the data based on the most significant features at each node.
  
- * Evaluation: Scripts and notebooks to evaluate model performance.
- 
+* Hyperparameter Tuning: The model was optimized by adjusting parameters like the maximum depth of the tree, the minimum number of samples required to split a node, and the minimum number of samples required at a leaf node.
+
+Each model was evaluated using metrics such as accuracy, precision, recall, and F1-score to determine the best-performing model for sentiment classification. The diverse range of models and techniques provides a comprehensive approach to tackling the sentiment analysis problem, ensuring robustness and reliability in the predictions.
+
  
  # LICENCE 
  ---
