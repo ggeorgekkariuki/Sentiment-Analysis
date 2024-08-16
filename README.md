@@ -1,10 +1,7 @@
-   # FOODY  AND FOODIE SENTIMENT ANALYSIS 
 
-  <img width="460" height="300" src="https://github.com/user-attachments/assets/a6003596-eb40-4823-8144-4758d8d8ebc2">
-</p>
-  <img width="460" height="300" src="[https://picsum.photos/460/300](https://github.com/user-attachments/assets/78cb6439-f3ff-4f8a-b543-ee0a1a3d2550)">
-</p>
- 
+![Screenshot 2024-08-16 161130](https://github.com/user-attachments/assets/288da99d-6304-4caa-b306-b44eb19b7c82)
+
+
  # OVERVIEW 
 
   Foody&Foodie, a beloved family-run restaurant in San Francisco, CA, has been a community staple for years. With a rich history in the food industry, the owners have gained insights into customer preferences and dining trends. They understand that maintaining a competitive edge requires more than delicious food and excellent service; it requires an acute awareness of customer sentiments and feedback. Recognizing that customer satisfaction is a dynamic target influenced by shifting trends and evolving market conditions, Foody&Foodie is implementing a data-driven approach to gather and analyze customer feedback. This project aims to provide a reliable method for interpreting customer sentiments, enabling Foody&Foodie to make informed decisions to enhance their offerings and dining experience. Ultimately, this initiative will help Foody&Foodie stay ahead in a competitive market by adapting to the ever-changing demands of their customers and strengthening their reputation as a cherished dining destination.
