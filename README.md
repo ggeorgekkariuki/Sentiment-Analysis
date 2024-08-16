@@ -1,8 +1,9 @@
    # FOODY  AND FOODIE SENTIMENT ANALYSIS 
-   
-![logo](https://github.com/user-attachments/assets/a6003596-eb40-4823-8144-4758d8d8ebc2)
-![big_logo](https://github.com/user-attachments/assets/78cb6439-f3ff-4f8a-b543-ee0a1a3d2550)
 
+  <img width="460" height="300" src="https://github.com/user-attachments/assets/a6003596-eb40-4823-8144-4758d8d8ebc2">
+</p>
+  <img width="460" height="300" src="[https://picsum.photos/460/300](https://github.com/user-attachments/assets/78cb6439-f3ff-4f8a-b543-ee0a1a3d2550)">
+</p>
  
  # OVERVIEW 
 
