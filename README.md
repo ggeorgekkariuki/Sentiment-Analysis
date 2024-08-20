@@ -1,10 +1,9 @@
-   # FOODY  AND FOODIE SENTIMENT ANALYSIS 
-   
-   ![Foody & Foodie Logo](logo.png)
- 
-    ---
+
+![Screenshot 2024-08-16 161130](https://github.com/user-attachments/assets/288da99d-6304-4caa-b306-b44eb19b7c82)
+
+
  # OVERVIEW 
-    ---
+
   Foody&Foodie, a beloved family-run restaurant in San Francisco, CA, has been a community staple for years. With a rich history in the food industry, the owners have gained insights into customer preferences and dining trends. They understand that maintaining a competitive edge requires more than delicious food and excellent service; it requires an acute awareness of customer sentiments and feedback. Recognizing that customer satisfaction is a dynamic target influenced by shifting trends and evolving market conditions, Foody&Foodie is implementing a data-driven approach to gather and analyze customer feedback. This project aims to provide a reliable method for interpreting customer sentiments, enabling Foody&Foodie to make informed decisions to enhance their offerings and dining experience. Ultimately, this initiative will help Foody&Foodie stay ahead in a competitive market by adapting to the ever-changing demands of their customers and strengthening their reputation as a cherished dining destination.
 
 
@@ -39,9 +38,27 @@ Examine the overall sentiment distribution across the reviews, breaking down the
 
 # DATA 
 ---
-* Data Source: Yelp reviews from restaurants in the San Francisco area. 
+The dataset for this analysis is sourced from Yelp and contains detailed food reviews. It encompasses a total of 429,771 rows and 8 columns, structured in a wide format.
 
-* Data Preprocessing: Removing capitalizations, stopwords, and applying lemmatization.
+Dataset Overview: Source: Yelp Website Total Rows:429,771 Total Columns: 8 Column Details:
+
+Review_id: A unique identifier assigned to each review. Data Type: Integer (object)
+
+User_ID: A unique identifier assigned to each user. Data Type: Integer (object)
+
+Business_id : A unique identifier assigned to each Business. Data Type: String (object)
+
+Stars: The ratings of reviews. Data Type: String (int64)
+
+Useful: Categorization of the review. Data Type: String (int64)
+
+Fuuny: Categorization of the review. Data Type: String (int64)
+
+Cool: Categorization of the review Data Type: Integer (int64)
+
+Text: The review. Data Type: Float (float64)
+
+Date: Date when the review was written. Data Type: Integer (float64)
 
 
 # MODELLING 
@@ -50,79 +67,29 @@ Examine the overall sentiment distribution across the reviews, breaking down the
  To classify the sentiment of reviews, multiple machine learning models were implemented and optimized using hyperparameter tuning. Each model brings its own strengths to the task, and their performance was assessed based on various evaluation metrics.
  
  
-# 1.Logistic Regression
----
- 
- Logistic regression is a linear model commonly used for binary and multiclass classification problems. In this project, the following steps were taken:
+The data preprocessing steps taken for this project included:
 
-* Training: The logistic regression model was trained using the review data, with a focus on achieving convergence by setting the maximum number of iterations to 3000. This ensures that the model has ample opportunity to fit the data adequately.
+1. Splitting the data between the target and features
+2. Label Encoding the target
+3. Vectorising the data using TFIDF Vectoriser
+4. Using SMOTE to avoid bias in the data
+5. Split the data using Train-Test Split of 80-20
 
-* Hyperparameter Tuning: Grid search was used to optimize the hyperparameters, including:
+Additionally the models in the modelling section include:
+1. Logistic Regression
+2. Random Forest Classifier
+3. Linear Support Vector Machine
+4. Multinomial Bayes
+5. Decision Trees Classifier
 
-* `C`: The inverse of regularization strength. Smaller values indicate stronger regularization.
+The tuned Random Forest offered both the highest accuracy score as well as the highest recall. We will use the model in our deployment.
 
-* `max_iter`: The maximum number of iterations for the solver to converge.
-
-* `solver`: The algorithm used for optimization, such as 'liblinear' or 'saga'.
-
-
-# 2.Random Forest Classifier
----
-The random forest classifier is an ensemble learning method that builds multiple decision trees and merges their predictions to improve accuracy and control over-fitting. The following approach was used:
-
-* Implementation: A random forest model was implemented with initial hyperparameters set as:
-
-       * `n_estimators`: 100, representing the number of trees in the forest.
-
-       * `max_depth`: 10, the maximum depth of each tree to control the complexity and prevent over-fitting.
-
-       * `min_samples_split`: 10, the minimum number of samples required to split an internal node.
-
-       * `min_samples_leaf`: 5, the minimum number of samples required to be at a leaf node.
-  
-* `Hyperparameter Tuning`: Tuning involved adjusting the number of trees and the depth of each tree to find the optimal balance       between bias and variance.
-
-
-# 3.Linear Support Vector Machine (SVM)
+# Deployment 
 ---
 
- SVM is a powerful classification method, particularly for high-dimensional data. The linear SVM was applied as follows:
-
- * Dimensionality Reduction: To manage the high dimensionality of the text data, `TruncatedSVD was used`. This technique reduces the feature space while preserving as much information as possible, which is crucial for computational efficiency and model performance.
+We processed text data by encoding the review categories and vectorizing the text using TF-IDF. Then, we balanced the dataset using SMOTE to handle class imbalances. After splitting the data into training and testing sets, we trained a Random Forest classifier on the processed data and saved both the vectorizer and the trained model for future use.
  
- * Training: The linear SVM model was trained on the reduced feature set to classify the text data efficiently.
- 
- * Hyperparameter Tuning: The tuning process involved:
- 
-   * Adjusting the number of components for TruncatedSVD to determine the optimal level of dimensionality reduction.
-   
-   * Fine-tuning the regularization parameter (C) of the SVM to balance the trade-off between achieving a low training error and a low testing error.
-   
-   * Exploring different ranges for n-grams to capture various levels of textual information.
-   
-   
-# 4. Multinomial Naive Bayes
----
-Multinomial Naive Bayes is particularly well-suited for text classification tasks due to its probabilistic nature. The steps taken include:
 
-* Training: The Multinomial Naive Bayes model was trained to classify the text data based on the frequency of words or features.
-
-* Hyperparameter Tuning: The primary focus was on adjusting the alpha parameter, which is the smoothing parameter. Smoothing is used to handle cases where a particular feature does not appear in the training set, thus avoiding zero probabilities.
-
-
-# 5. Decision Tree Classifier
-Decision tree classifiers are intuitive and easy to interpret models that make decisions based on the features of the input data. Here's how it was implemented:
-
- * Implementation: A decision tree classifier was implemented to create a model that splits the data based on the most significant features at each node.
- 
-* Hyperparameter Tuning: The model was optimized by adjusting parameters like the maximum depth of the tree, the minimum number of samples required to split a node, and the minimum number of samples required at a leaf node.
-
-Each model was evaluated using metrics such as accuracy, precision, recall, and F1-score to determine the best-performing model for sentiment classification. The diverse range of models and techniques provides a comprehensive approach to tackling the sentiment analysis problem, ensuring robustness and reliability in the predictions.
-
- 
- # LICENCE 
- ---
- This project is licensed under the MIT License - see the LICENSE file for details.
  
  
                          
